@@ -4,7 +4,7 @@
 -   Clonar o projeto utilizando o comando abaixo.
  
 ```shell
-git clone https://github.com/osamuelalmeid/ecommerce_app_flutter.git
+git clone https://github.com/osamuelalmeid/movieflix_flutter.git
 ```
 
 -   Entrar na pasta do projeto e baixar os pacotes, rodando o comando abaixo no terminal.
