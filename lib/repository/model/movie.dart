@@ -11,7 +11,7 @@ class Movie {
       this.title,
       this.video,
       this.voteCount,
-      this.voteAverage});
+      this.voteAverage}): assert(id! > 0);
 
   String? backdropPath;
   int? id;
