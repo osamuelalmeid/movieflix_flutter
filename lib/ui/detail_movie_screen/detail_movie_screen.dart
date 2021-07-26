@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -33,9 +31,14 @@ class DetailMovieScreen extends StatelessWidget {
     return BlocBuilder<MovieDetailBloc, MovieDetailState>(
         builder: (context, state) {
       if (state is MovieDetailLoading) {
-        return Center(
-          child: CircularProgressIndicator(),
-        );
+        return Container(
+                height: 280,
+                child: Center(
+                  child: CircularProgressIndicator(
+                    color: Colors.red,
+                  ),
+                ),
+              );
       } else if (state is MovieDetailLoaded) {
         MovieDetail movieDetail = state.detail;
         return SingleChildScrollView(
@@ -46,11 +49,13 @@ class DetailMovieScreen extends StatelessWidget {
                   child: CachedNetworkImage(
                     imageUrl:
                         "https://image.tmdb.org/t/p/original/${movieDetail.backdropPath}",
-                    height: MediaQuery.of(context).size.height / 2,
+                    height: 400,
                     width: double.infinity,
                     fit: BoxFit.cover,
                     placeholder: (context, url) => Center(
-                      child: CircularProgressIndicator(),
+                      child: CircularProgressIndicator(
+                        color: Colors.red,
+                      ),
                     ),
                     errorWidget: (context, url, error) => Container(
                       child: Center(
@@ -71,7 +76,7 @@ class DetailMovieScreen extends StatelessWidget {
                     elevation: 0,
                   ),
                   Container(
-                    padding: EdgeInsets.only(top: 120),
+                    padding: EdgeInsets.only(top: 80),
                     child: GestureDetector(
                       onTap: () async {
                         final youtubeUrl =
@@ -103,7 +108,7 @@ class DetailMovieScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 230,
+                    height: 190,
                   ),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 20),
@@ -236,7 +241,9 @@ class DetailMovieScreen extends StatelessWidget {
                                       placeholder: (context, url) => Container(
                                         width: 260,
                                         child: Center(
-                                          child: CircularProgressIndicator(),
+                                          child: CircularProgressIndicator(
+                                            color: Colors.red,
+                                          ),
                                         ),
                                       ),
                                       imageUrl:
@@ -298,7 +305,9 @@ class DetailMovieScreen extends StatelessWidget {
                                           width: 80,
                                           height: 80,
                                           child: Center(
-                                            child: CircularProgressIndicator(),
+                                            child: CircularProgressIndicator(
+                                              color: Colors.red,
+                                            ),
                                           ),
                                         ),
                                         errorWidget: (context, url, error) => Container(
@@ -343,7 +352,8 @@ class DetailMovieScreen extends StatelessWidget {
                             ),
                             itemCount: movieDetail.castList!.length,
                           ),
-                        )
+                        ),
+                        SizedBox(height: 20),
                       ],
                     ),
                   )

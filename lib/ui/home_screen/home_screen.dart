@@ -71,7 +71,14 @@ Widget _buildBody(BuildContext context) {
           children: [
             BlocBuilder<MovieBloc, MovieState>(builder: (context, state) {
               if (state is MovieLoading) {
-                return Center(child: CircularProgressIndicator());
+                return Container(
+                height: 280,
+                child: Center(
+                  child: CircularProgressIndicator(
+                    color: Colors.red,
+                  ),
+                ),
+              );
               } else if (state is MovieLoaded) {
                 List<Movie> movies = state.movieList;
                 return SingleChildScrollView(
@@ -101,7 +108,15 @@ Widget _buildBody(BuildContext context) {
                                       width: MediaQuery.of(context).size.width,
                                       fit: BoxFit.cover,
                                       placeholder: (context, url) =>
-                                          CircularProgressIndicator(),
+                                          Center(
+                                            child: Container(
+                                              height: 50,
+                                              width: 50,
+                                              child: CircularProgressIndicator(
+                                                color: Colors.red,
+                                              )
+                                            )
+                                          ),
                                       errorWidget: (context, url, error) =>
                                           Center(
                                         child: Icon(Icons.error),
@@ -208,7 +223,9 @@ Widget _buildBody(BuildContext context) {
                                                           height: 80,
                                                           child: Center(
                                                             child:
-                                                                CircularProgressIndicator(),
+                                                                CircularProgressIndicator(
+                                                                  color: Colors.red,
+                                                                ),
                                                           ),
                                                         ),
                                                         errorWidget: (context,
@@ -266,7 +283,8 @@ Widget _buildBody(BuildContext context) {
                                   },
                                 )
                               ],
-                            )
+                            ),
+                            SizedBox(height: 20),
                           ],
                         ),
                       )

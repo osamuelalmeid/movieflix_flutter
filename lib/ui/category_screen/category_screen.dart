@@ -50,7 +50,9 @@ class _BuildWidgetCategoryState extends State<BuildWidgetCategory> {
         BlocBuilder<GenreBloc, GenreState>(builder: (context, state) {
           if (state is GenreLoading) {
             return Center(
-              child: CircularProgressIndicator(),
+              child: CircularProgressIndicator(
+                color: Colors.red,
+              ),
             );
           } else if (state is GenreLoaded) {
             List<Genre> genres = state.genreList;
@@ -134,7 +136,9 @@ class _BuildWidgetCategoryState extends State<BuildWidgetCategory> {
               return Container(
                 height: 280,
                 child: Center(
-                  child: CircularProgressIndicator(),
+                  child: CircularProgressIndicator(
+                    color: Colors.red,
+                  ),
                 ),
               );
             } else if (state is MovieLoaded) {
@@ -181,7 +185,9 @@ class _BuildWidgetCategoryState extends State<BuildWidgetCategory> {
                                   width: 180,
                                   height: 250,
                                   child: Center(
-                                    child: CircularProgressIndicator(),
+                                    child: CircularProgressIndicator(
+                                      color: Colors.red,
+                                    ),
                                   ),
                                 ),
                                 errorWidget: (context, url, error) => Container(
