@@ -15,23 +15,23 @@ class MovieDetail {
       this.voteAverage,
       this.voteCount});
 
-  final String? id;
-  final String? title;
-  final String? backdropPath;
-  final String? budget;
-  final String? homePage;
-  final String? originalTitle;
-  final String? overview;
-  final String? releaseDate;
-  final String? runtime;
-  final String? voteAverage;
-  final String? voteCount;
+  final String id;
+  final String title;
+  final String backdropPath;
+  final String budget;
+  final String homePage;
+  final String originalTitle;
+  final String overview;
+  final String releaseDate;
+  final String runtime;
+  final String voteAverage;
+  final String voteCount;
 
-  String? trailerId;
+  String trailerId;
 
-  MovieImage? movieImage;
+  MovieImage movieImage;
 
-  List<Cast>? castList;
+  List<Cast> castList;
 
   factory MovieDetail.fromJson(dynamic json) {
     if (json == null) {

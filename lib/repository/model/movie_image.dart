@@ -5,11 +5,11 @@ class MovieImage extends Equatable {
   final List<Screenshot> backdrops;
   final List<Screenshot> posters;
 
-  const MovieImage({required this.backdrops, required this.posters});
+  const MovieImage({this.backdrops, this.posters});
 
   factory MovieImage.fromJson(Map<String, dynamic> result) {
     if (result == null) {
-      // return MovieImage();
+      return MovieImage();
     }
 
     return MovieImage(

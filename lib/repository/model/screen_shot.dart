@@ -9,21 +9,20 @@ class Screenshot extends Equatable {
   final int voteCount;
 
   Screenshot(
-      {required this.aspect,
-      required this.imagePath,
-      required this.height,
-      required this.width,
-      required this.voteAverage,
-      required this.voteCount});
+      {this.aspect,
+      this.imagePath,
+      this.height,
+      this.width,
+      this.voteAverage,
+      this.voteCount});
 
   factory Screenshot.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      // return Screenshot();
+    return Screenshot();
     }
 
     return Screenshot(
-        aspect: json['aspect_ratio']
-            .toString(),
+        aspect: json['aspect_ratio'].toString(),
         imagePath: json['file_path'],
         height: json['height'],
         width: json['width'],

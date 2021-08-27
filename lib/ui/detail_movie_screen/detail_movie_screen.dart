@@ -11,14 +11,14 @@ import 'package:movieflix_flutter/repository/model/screen_shot.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class DetailMovieScreen extends StatelessWidget {
-  const DetailMovieScreen({Key? key, required this.movie}) : super(key: key);
+  const DetailMovieScreen({Key key, @required this.movie}) : super(key: key);
 
   final Movie movie;
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => MovieDetailBloc()..add(MovieDetailEventStarted(movie.id!)),
+      create: (_) => MovieDetailBloc()..add(MovieDetailEventStarted(movie.id)),
       child: WillPopScope(
           child: Scaffold(
             body: _buildDetailBody(context),
@@ -94,7 +94,7 @@ class DetailMovieScreen extends StatelessWidget {
                               size: 65,
                             ),
                             Text(
-                              movieDetail.title!.toUpperCase(),
+                              movieDetail.title.toUpperCase(),
                               style: TextStyle(
                                   color: Colors.white,
                                   fontFamily: 'muli',
@@ -137,7 +137,7 @@ class DetailMovieScreen extends StatelessWidget {
                         Container(
                           height: 35,
                           child: Text(
-                            movieDetail.overview!,
+                            movieDetail.overview,
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(fontFamily: 'muli'),
@@ -161,7 +161,7 @@ class DetailMovieScreen extends StatelessWidget {
                                       fontWeight: FontWeight.bold),
                                 ),
                                 Text(
-                                  movieDetail.releaseDate!,
+                                  movieDetail.releaseDate,
                                   style: TextStyle(
                                     color: Colors.yellow[800],
                                     fontFamily: 'muli',
@@ -182,7 +182,7 @@ class DetailMovieScreen extends StatelessWidget {
                                       fontWeight: FontWeight.bold),
                                 ),
                                 Text(
-                                  movieDetail.runtime!,
+                                  movieDetail.runtime,
                                   style: TextStyle(
                                     color: Colors.yellow[800],
                                     fontFamily: 'muli',
@@ -203,7 +203,7 @@ class DetailMovieScreen extends StatelessWidget {
                                       fontWeight: FontWeight.bold),
                                 ),
                                 Text(
-                                  movieDetail.budget!,
+                                  movieDetail.budget,
                                   style: TextStyle(
                                     color: Colors.yellow[800],
                                     fontFamily: 'muli',
@@ -228,7 +228,7 @@ class DetailMovieScreen extends StatelessWidget {
                           child: ListView.separated(
                             itemBuilder: (context, index) {
                               Screenshot image =
-                                  movieDetail.movieImage!.backdrops[index];
+                                  movieDetail.movieImage.backdrops[index];
                               return Container(
                                 child: Card(
                                   elevation: 3,
@@ -259,7 +259,7 @@ class DetailMovieScreen extends StatelessWidget {
                               color: Colors.transparent,
                               width: 5,
                             ),
-                            itemCount: movieDetail.movieImage!.backdrops.length,
+                            itemCount: movieDetail.movieImage.backdrops.length,
                             scrollDirection: Axis.horizontal,
                           ),
                         ),
@@ -275,7 +275,7 @@ class DetailMovieScreen extends StatelessWidget {
                           child: ListView.separated(
                             scrollDirection: Axis.horizontal,
                             itemBuilder: (context, index) {
-                              Cast cast = movieDetail.castList![index];
+                              Cast cast = movieDetail.castList[index];
                               return Container(
                                   child: Column(
                                 children: [
@@ -321,7 +321,7 @@ class DetailMovieScreen extends StatelessWidget {
                                   Container(
                                     child: Center(
                                       child: Text(
-                                        cast.name!.toUpperCase(),
+                                        cast.name.toUpperCase(),
                                         style: TextStyle(
                                           color: Colors.black45,
                                           fontSize: 8,
@@ -333,7 +333,7 @@ class DetailMovieScreen extends StatelessWidget {
                                   Container(
                                     child: Center(
                                       child: Text(
-                                        cast.character!.toUpperCase(),
+                                        cast.character.toUpperCase(),
                                         style: TextStyle(
                                           color: Colors.black45,
                                           fontSize: 8,
@@ -350,7 +350,7 @@ class DetailMovieScreen extends StatelessWidget {
                               color: Colors.transparent,
                               width: 5,
                             ),
-                            itemCount: movieDetail.castList!.length,
+                            itemCount: movieDetail.castList.length,
                           ),
                         ),
                         SizedBox(height: 20),

@@ -34,7 +34,7 @@ void main() {
     expect(movie.voteCount, 1215);
   });
 
-  test('should return error when create movie with id less than zero', () {
+  test('should return error when create movie with id negative', () {
     expect(() => Movie(id: -1), throwsAssertionError);
   });
 }

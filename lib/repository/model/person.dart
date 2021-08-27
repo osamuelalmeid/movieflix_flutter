@@ -7,12 +7,12 @@ class Person {
       this.knowForDepartment,
       this.popularity});
 
-  final String? id;
-  final String? gender;
-  final String? name;
-  final String? profilePath;
-  final String? knowForDepartment;
-  final String? popularity;
+  final String id;
+  final String gender;
+  final String name;
+  final String profilePath;
+  final String knowForDepartment;
+  final String popularity;
 
   factory Person.fromJson(dynamic json) {
     if (json == null) {

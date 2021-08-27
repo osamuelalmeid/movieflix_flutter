@@ -14,7 +14,7 @@ import 'package:movieflix_flutter/ui/category_screen/category_screen.dart';
 import 'package:movieflix_flutter/ui/detail_movie_screen/detail_movie_screen.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({Key key}) : super(key: key);
 
   static String routeName = "/home";
 
@@ -129,7 +129,7 @@ Widget _buildBody(BuildContext context) {
                                       padding:
                                           EdgeInsets.only(bottom: 15, left: 15),
                                       child: Text(
-                                        movie.title!.toUpperCase(),
+                                        movie.title.toUpperCase(),
                                         style: TextStyle(
                                             color: Colors.white,
                                             fontWeight: FontWeight.bold,
@@ -244,7 +244,7 @@ Widget _buildBody(BuildContext context) {
                                                   Container(
                                                     child: Center(
                                                       child: Text(
-                                                        person.name!.toUpperCase(),
+                                                        person.name.toUpperCase(),
                                                         style: TextStyle(
                                                             color: Colors.black45,
                                                             fontSize: 8,
@@ -255,7 +255,7 @@ Widget _buildBody(BuildContext context) {
                                                   Container(
                                                     child: Center(
                                                       child: Text(
-                                                        person.knowForDepartment!
+                                                        person.knowForDepartment
                                                             .toUpperCase(),
                                                         style: TextStyle(
                                                             color: Colors.black45,

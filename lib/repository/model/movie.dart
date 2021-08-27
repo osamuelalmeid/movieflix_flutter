@@ -11,20 +11,20 @@ class Movie {
       this.title,
       this.video,
       this.voteCount,
-      this.voteAverage}): assert(id! > 0);
+      this.voteAverage}): assert(id > 0);
 
-  String? backdropPath;
-  int? id;
-  String? originalLanguage;
-  String? originalTitle;
-  String? overview;
-  double? popularity;
-  String? posterPath;
-  String? releaseDate;
-  String? title;
-  bool? video;
-  String? voteAverage;
-  int? voteCount;
+  String backdropPath;
+  int id;
+  String originalLanguage;
+  String originalTitle;
+  String overview;
+  double popularity;
+  String posterPath;
+  String releaseDate;
+  String title;
+  bool video;
+  String voteAverage;
+  int voteCount;
 
   String error = "";
 

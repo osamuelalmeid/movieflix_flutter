@@ -12,7 +12,7 @@ import 'package:movieflix_flutter/repository/model/movie.dart';
 import 'package:movieflix_flutter/ui/detail_movie_screen/detail_movie_screen.dart';
 
 class BuildWidgetCategory extends StatefulWidget {
-  const BuildWidgetCategory({Key? key, this.selectedGenre = 28})
+  const BuildWidgetCategory({Key key, this.selectedGenre = 28})
       : super(key: key);
 
   final int selectedGenre;
@@ -73,7 +73,7 @@ class _BuildWidgetCategoryState extends State<BuildWidgetCategory> {
                       GestureDetector(
                         onTap: () {
                           setState(() {
-                            selectedGenre = genres[index].id!;
+                            selectedGenre = genres[index].id;
                             context
                                 .read<MovieBloc>()
                                 .add(MovieEventStarted(selectedGenre, ""));
@@ -89,7 +89,7 @@ class _BuildWidgetCategoryState extends State<BuildWidgetCategory> {
                                   ? Colors.black45
                                   : Colors.white),
                           child: Text(
-                            genre.name!.toUpperCase(),
+                            genre.name.toUpperCase(),
                             style: TextStyle(
                                 fontSize: 12,
                                 fontWeight: FontWeight.bold,
@@ -204,7 +204,7 @@ class _BuildWidgetCategoryState extends State<BuildWidgetCategory> {
                           ),
                           Container(
                             width: 180,
-                            child: Text(movie.title!.toUpperCase(),
+                            child: Text(movie.title.toUpperCase(),
                                 style: TextStyle(
                                     fontSize: 12,
                                     color: Colors.black45,
@@ -241,7 +241,7 @@ class _BuildWidgetCategoryState extends State<BuildWidgetCategory> {
                                   size: 14,
                                 ),
                                 Text(
-                                  movie.voteAverage!,
+                                  movie.voteAverage,
                                   style: TextStyle(color: Colors.black45),
                                 )
                               ],

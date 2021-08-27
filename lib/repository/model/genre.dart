@@ -2,8 +2,8 @@ class Genre {
 
   Genre({this.id, this.name});
   
-  final int? id;
-  final String? name;
+  final int id;
+  final String name;
 
   String error = "";
 

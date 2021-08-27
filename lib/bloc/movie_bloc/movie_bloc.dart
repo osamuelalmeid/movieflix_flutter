@@ -1,8 +1,9 @@
+import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movieflix_flutter/bloc/movie_bloc/movie_event.dart';
 import 'package:movieflix_flutter/bloc/movie_bloc/movie_state.dart';
+import 'package:movieflix_flutter/repository/repository.dart';
 import 'package:movieflix_flutter/repository/model/movie.dart';
-import 'package:movieflix_flutter/repository/service/api_service.dart';
 
 class MovieBloc extends Bloc<MovieEvent, MovieState> {
   MovieBloc() : super(MovieLoading());
@@ -14,9 +15,8 @@ class MovieBloc extends Bloc<MovieEvent, MovieState> {
     }
   }
 
-  Stream<MovieState> _mapMovieEventStateToState(
-      int movieId, String query) async* {
-    final service = ApiService();
+  Stream<MovieState> _mapMovieEventStateToState(int movieId, String query) async* {
+    final service = Repository(Dio());
     yield MovieLoading();
     try {
       List<Movie> movieList = [];

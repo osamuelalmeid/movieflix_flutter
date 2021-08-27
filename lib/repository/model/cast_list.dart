@@ -5,9 +5,9 @@ class CastList {
 }
 
 class Cast {
-  final String? name;
-  final String? profilePath;
-  final String? character;
+  final String name;
+  final String profilePath;
+  final String character;
 
   Cast({this.name, this.profilePath, this.character});
 
